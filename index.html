@@ -1,37 +1,35 @@
-
 <!DOCTYPE html>
 <html><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>CRS</title>
+<title>Decoder-side Cross Resolution Synthesis for Video Compression Enhancement</title>
 
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- <base href="/"> -->
+<!-- <base href="/"> -->
 
 <!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
-  <link rel="icon" type="image/png" href="img/lens-icon.png">
-    <!-- Place favicon.ico in the root directory -->
+<link rel="icon" type="image/png" href="img/lens-icon.png">
+<!-- Place favicon.ico in the root directory -->
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
-    <link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+<link rel="stylesheet" href="css/app.css">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131406202-2"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+<link rel="stylesheet" href="css/bootstrap.min.css">
 
-    gtag('config', 'UA-131406202-2');
-    </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131406202-2"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
 
+gtag('config', 'UA-131406202-2');
+</script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -93,11 +91,11 @@
             </div>
         </div>
 
-        <div class="affiliations ">
+        <div class="affiliations">
             <sup>1</sup> Nanjing University &nbsp;&nbsp;&nbsp;&nbsp;
             <sup>2</sup> OPPO &nbsp;&nbsp;&nbsp;&nbsp;
             <sup>3</sup> Hangzhou Normal University &nbsp;&nbsp;&nbsp;&nbsp;  
-          </div>
+        </div>
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -105,12 +103,6 @@
                 <div align="center">
                     <img src="images/0.gif" height="222"/><img src="images/1.gif" height="222"/><br><img src="images/2.gif" height="160"/><img src="images/3.gif" height="160"/>  
                 </div>-->
-                <div align="center">
-                    <img src="src/pipeline.png" height="195"/>
-                </div>
-                <body align="center">
-                    <strong>CRS-based Video Compression Enhancement (VCE).</strong> &#8595 (in red) is for bicubic down-sampling; <strong>E</strong>, <strong>D</strong>, and <strong>B</strong> represent video encoder, decoder, and decoded picture buffer (DPB) respectively.
-                </body><br>
                 <!-- <div align="center">
                     <img src="images/AWnet.gif" height="195"/>
                 </div>
@@ -121,14 +113,26 @@
                     Abstract
                 </h3>
                 <p class="text-justify">
-                    This paper proposes a decoder-side Cross Resolution Synthesis (CRS) module to pursue better compression efficiency beyond the latest Versatile Video Coding (VVC), where we encode intra frames at original high resolution (HR),  compress inter frames at a lower resolution (LR), and then super-resolve decoded LR inter frames with the help from preceding HR intra and neighboring LR inter frames.
-                    
-                    For a LR inter frame, a motion alignment and aggregation network (MAN) is devised to produce temporally aggregated motion representation (AMR) for the guarantee of temporal smoothness; Another texture compensation network (TCN) inputs decoded HR intra frame, re-sampled HR intra frame, and this LR inter frame to generate multiscale affinity map (MAM) and multiscale texture representation (MTR)  for better augmenting spatial details; Finally, similarity-driven fusion synthesizes AMR, MTR, MAM to upscale LR inter frame for the removal of compression and resolution re-sampling noises.
-                    
-                    We enhance the VVC using proposed CRS, showing averaged 8.76% and 11.93% Bjøntegaard Delta Rate (BD-Rate) gains against the latest VVC anchor in Random Access (RA) and Low-delay P (LDP) settings respectively. In addition, experimental comparisons to the state-of-the-art super-resolution (SR) based VVC enhancement methods, and ablation studies are conducted to further report superior efficiency and generalization of proposed algorithm.
+                    This paper proposes a decoder-side Cross Resolution Synthesis (CRS) module to pursue better compression efficiency beyond the latest Versatile Video Coding (VVC),
+                    where we encode intra frames at original high resolution (HR),  compress inter frames at a lower resolution (LR), and then super-resolve decoded LR inter frames 
+                    with the help from preceding HR intra and neighboring LR inter frames. For a LR inter frame, a motion alignment and aggregation network (MAN) is devised to 
+                    produce temporally aggregated motion representation (AMR) for the guarantee of temporal smoothness; Another texture compensation network (TCN) inputs decoded HR 
+                    intra frame, re-sampled HR intra frame, and this LR inter frame to generate multiscale affinity map (MAM) and multiscale texture representation (MTR)  for better 
+                    augmenting spatial details; Finally, similarity-driven fusion synthesizes AMR, MTR, MAM to upscale LR inter frame for the removal of compression and resolution 
+                    re-sampling noises. We enhance the VVC using proposed CRS, showing averaged 8.76% and 11.93% Bjøntegaard Delta Rate (BD-Rate) gains against the latest VVC anchor 
+                    in Random Access (RA) and Low-delay P (LDP) settings respectively. In addition, experimental comparisons to the state-of-the-art super-resolution (SR) based VVC 
+                    enhancement methods, and ablation studies are conducted to further report superior efficiency and generalization of proposed algorithm.
                 </p>
+                <div align="center">
+                    <img src="src/pipeline.png" height="195"/>
+                </div>
+                <body align="center">
+                    <strong>CRS-based Video Compression Enhancement (VCE).</strong> &#8595 (in red) is for bicubic down-sampling; <strong>E</strong>, <strong>D</strong>, and <strong>B</strong> represent video encoder, decoder, and decoded picture buffer (DPB) respectively.
+                </body><br>
             </div>
         </div>
+
+        
         
         <!-- <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center">
