@@ -140,7 +140,13 @@ gtag('config', 'UA-131406202-2');
                     <img src="src/mfmc.png" height="195"/>
                 </div>
                 <body align="center">
-                    CRS
+                    <strong>Motion Alignment and Aggregation Network (MAN)</strong> for deriving aggregated motion representation (AMR). It consists of two stages: Alignment and Aggregation. 
+                    At Alignment stage, 4 residual blocks are utilized to extract deep representative features of each LR inter frames; A multiscale network (MSN) is employed to generate 
+                    the multiscale temporal offsets by traversing all pairs of current LR inter frame and each frame in temporal window buffer; Later, a deformable convolution network (DCN) 
+                    is applied to generate aligned temporal features by inputting deep features of a neighbor frame and corresponding multiscale temporal offsets derived between this neighbor 
+                    frame and current frame. Finally, separable temporal attention (TA) and spatial attention (SA) are consecutively applied to aggregate necessary and useful temporal motion 
+                    features for temporally-smooth super-resolution. $T$ is the total number of frames in temporal window buffer used for temporal alignment; $T$ = 2$M$+1 and it is 3 when 
+                    having $M$ = 1 in our implementation.
                 </body><br>
                 <br />
                 <div align="center">
