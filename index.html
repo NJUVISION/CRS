@@ -153,14 +153,18 @@ gtag('config', 'UA-131406202-2');
                     <img src="src/ttn.png" height="390"/>
                 </div>
                 <body align="center">
-                    CRS
+                    {\bf Texture Compensation Network (TCN)} for producing multiscale texture representation (MTR) and multiscale affinity map (MAM). ${\downarrow}{\uparrow}$ (in red) denotes 
+                    the re-sampling operation, \textbf{U($d$)} is for unfolding with stride $d$, \textbf{R} is for reshaping operation, {\bf S} is index selection for patch re-organization, 
+                    {\bf I} is for interpolation, and \textbf{F($d$)} is for folding operation with stride $d$, which is the inverse operation of \textbf{U($d$)}. The kernel sizes for 
+                    \textbf{F(1)}, \textbf{F(2)} and \textbf{F(4)} are $3\times3$, $6\times6$ and $12\times12$ respectively.
                 </body><br>
                 <br />
                 <div align="center">
                     <img src="src/fusion.png" height="195"/>
                 </div>
                 <body align="center">
-                    CRS
+                    {\bf Similarity-driven Fusion} for final reconstruction synthesis. Scale-dependent fusion is applied to progressively combine affinity map, multiscale texture 
+                    representation (MTR) and aggregated motion representation (AMR) for fine-grained spatiotemporal loss recovery.
                 </body><br>
             </div>
         </div>
