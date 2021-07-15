@@ -28,7 +28,7 @@
                 <a href="mailto:wangdong7@oppo.com", target="_blank">Dong Wang</a> <sup>2</sup>, 
                 <a href="mailto:DandanDing@hznu.edu.cn", target="_blank">Dandan Ding</a> <sup>3</sup>, 
                 <a href="https://vision.nju.edu.cn/fc/d3/c29470a457939/page.htm", target="_blank">Zhan Ma</a> <sup>1</sup>
-                
+
                 <div class="affiliations">
                     <sup>1</sup> Nanjing University &nbsp;&nbsp;&nbsp;&nbsp;
                     <sup>2</sup> OPPO &nbsp;&nbsp;&nbsp;&nbsp;
@@ -55,6 +55,16 @@
                 <iframe width="1024" height="576" src="https://www.youtube.com/embed/B3KRQmJaLQQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </p>
     </div> -->
+
+    <div class="container" id="method">
+        <h2>Method</h2>
+        <p style="text-align:center;">
+            <img src="src/pipeline.png" height="480">
+        </p>
+        <br>
+        <p>
+            Overview of the proposed LSTM-VRN and MIMO-VRN for video rescaling. Both schemes involve an invertible network with coupling layers for video downscaling and upscaling. In part (a), LSTM-VRN downscales every video frame $x_t$ independently and forms a prediction $\hat{z}_t$ of the high-frequency component $z_t$ from the LR video frames $\{\hat{y}_i\}_{i=t-L}^{t+L}$ by a bi-directional LSTM that operates in a sliding window manner. In part (b), MIMO-VRN downscales a group of HR video frames $\{x_i\}_{i=t}^{t+g}$ into the LR video frames $\{\hat{y}_i\}_{i=t}^{t+g}$ simultaneously. The upscaling is also done on a group-by-group basis, with the high-frequency components $\{z_i\}_{i=t}^{t+g}$ estimated from the $\{\hat{y}_i\}_{i=t}^{t+g}$ by a predictive module.</p>
+    </div>
     
 
     <div class="container" id="paperdiv">
