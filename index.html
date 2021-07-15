@@ -64,7 +64,8 @@
         </p>
         <br>
         <p>
-            Overview of the proposed LSTM-VRN and MIMO-VRN for video rescaling. Both schemes involve an invertible network with coupling layers for video downscaling and upscaling. In part (a), LSTM-VRN downscales every video frame $x_t$ independently and forms a prediction $\hat{z}_t$ of the high-frequency component $z_t$ from the LR video frames $\{\hat{y}_i\}_{i=t-L}^{t+L}$ by a bi-directional LSTM that operates in a sliding window manner. In part (b), MIMO-VRN downscales a group of HR video frames $\{x_i\}_{i=t}^{t+g}$ into the LR video frames $\{\hat{y}_i\}_{i=t}^{t+g}$ simultaneously. The upscaling is also done on a group-by-group basis, with the high-frequency components $\{z_i\}_{i=t}^{t+g}$ estimated from the $\{\hat{y}_i\}_{i=t}^{t+g}$ by a predictive module.</p>
+            <strong>CRS-based Video Compression Enhancement (VCE).</strong> &#8595 (in red) is for bicubic down-sampling; <strong>E</strong>, <strong>D</strong>, and <strong>B</strong> represent video encoder, decoder, and decoded picture buffer (DPB) respectively.
+        </p>
     </div>
     
 
