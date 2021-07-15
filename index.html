@@ -45,7 +45,6 @@
     </div>
 
     <div class="container" id="method">
-        <h2>Method</h2>
         <p style="text-align:center;">
             <img src="src/pipeline.png" height="250">
             <img src="src/crs.png" height="250">
@@ -58,9 +57,14 @@
 
     <div class="container" id="abstractdiv">
         <h2>Abstract</h2>
-            <p>This paper proposes a decoder-side Cross Resolution Synthesis (CRS) module to pursue better compression efficiency beyond the latest Versatile Video Coding (VVC), where we encode intra frames at original high resolution (HR), compress inter frames at a lower resolution (LR), and then super-resolve decoded LR inter frames with the help from preceding HR intra and neighboring LR inter frames.
-                For a LR inter frame, a motion alignment and aggregation network (MAN) is devised to produce temporally aggregated motion representation (AMR) for the guarantee of temporal smoothness; Another texture compensation network (TCN) inputs decoded HR intra frame, re-sampled HR intra frame, and this LR inter frame to generate multiscale affinity map (MAM) and multiscale texture representation (MTR)  for better augmenting spatial details; Finally, similarity-driven fusion synthesizes AMR, MTR, MAM to upscale LR inter frame for the removal of compression and resolution re-sampling noises.
-                We enhance the VVC using proposed CRS, showing averaged 8.76% and 11.93% Bjøntegaard Delta Rate (BD-Rate) gains against the latest VVC anchor in Random Access (RA) and Low-delay P (LDP) settings respectively. In addition, experimental comparisons to the state-of-the-art super-resolution (SR) based VVC enhancement methods, and ablation studies are conducted to further report superior efficiency and generalization of proposed algorithm. </p>
+        <p style="text-align:center;">
+            <img src="src/pipeline.png" height="250">
+            <img src="src/crs.png" height="250"></p>
+        <br>
+        <p><strong>CRS-based Video Compression Enhancement (VCE).</strong> &#8595 (in red) is for bicubic down-sampling; <strong>E</strong>, <strong>D</strong>, and <strong>B</strong> represent video encoder, decoder, and decoded picture buffer (DPB) respectively.</p>
+        <p>This paper proposes a decoder-side Cross Resolution Synthesis (CRS) module to pursue better compression efficiency beyond the latest Versatile Video Coding (VVC), where we encode intra frames at original high resolution (HR), compress inter frames at a lower resolution (LR), and then super-resolve decoded LR inter frames with the help from preceding HR intra and neighboring LR inter frames.
+            For a LR inter frame, a motion alignment and aggregation network (MAN) is devised to produce temporally aggregated motion representation (AMR) for the guarantee of temporal smoothness; Another texture compensation network (TCN) inputs decoded HR intra frame, re-sampled HR intra frame, and this LR inter frame to generate multiscale affinity map (MAM) and multiscale texture representation (MTR)  for better augmenting spatial details; Finally, similarity-driven fusion synthesizes AMR, MTR, MAM to upscale LR inter frame for the removal of compression and resolution re-sampling noises.
+            We enhance the VVC using proposed CRS, showing averaged 8.76% and 11.93% Bjøntegaard Delta Rate (BD-Rate) gains against the latest VVC anchor in Random Access (RA) and Low-delay P (LDP) settings respectively. In addition, experimental comparisons to the state-of-the-art super-resolution (SR) based VVC enhancement methods, and ablation studies are conducted to further report superior efficiency and generalization of proposed algorithm. </p>
     </div>
     <!-- <div class="container" id="intro_video">
         <h2>Introduction Video</h2>
