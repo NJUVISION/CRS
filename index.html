@@ -50,53 +50,32 @@
 
     <div class="container" id="abstractdiv">
         <h2>Abstract</h2>
-        <p>This paper proposes a decoder-side Cross Resolution Synthesis (CRS) module to pursue better compression efficiency beyond the latest Versatile Video Coding (VVC), where we encode intra frames at original high resolution (HR), compress inter frames at a lower resolution (LR), and then super-resolve decoded LR inter frames with the help from preceding HR intra and neighboring LR inter frames.
-            For a LR inter frame, a motion alignment and aggregation network (MAN) is devised to produce temporally aggregated motion representation (AMR) for the guarantee of temporal smoothness; Another texture compensation network (TCN) inputs decoded HR intra frame, re-sampled HR intra frame, and this LR inter frame to generate multiscale affinity map (MAM) and multiscale texture representation (MTR)  for better augmenting spatial details; Finally, similarity-driven fusion synthesizes AMR, MTR, MAM to upscale LR inter frame for the removal of compression and resolution re-sampling noises.
-            We enhance the VVC using proposed CRS, showing averaged 8.76% and 11.93% Bjøntegaard Delta Rate (BD-Rate) gains against the latest VVC anchor in Random Access (RA) and Low-delay P (LDP) settings respectively. In addition, experimental comparisons to the state-of-the-art super-resolution (SR) based VVC enhancement methods, and ablation studies are conducted to further report superior efficiency and generalization of proposed algorithm. </p>
+        <p>
+            This paper proposes a decoder-side Cross Resolution Synthesis (CRS) module to pursue better compression efficiency beyond the latest Versatile Video Coding (VVC), where we encode intra frames at original high resolution (HR),  compress inter frames at a lower resolution (LR), and then super-resolve decoded LR inter frames with the help from preceding HR intra and neighboring LR inter frames.
+            For a LR inter frame, a motion alignment and aggregation network (MAN) is devised to produce temporally aggregated motion representation to best guarantee the temporal smoothness; Another texture compensation network (TCN) is utilized to generate texture representation from decoded HR intra frame for better augmenting spatial details; Finally, a similarity-driven fusion engine synthesizes motion and texture representations to upscale LR inter frames for the removal of compression and resolution re-sampling noises.
+            We enhance the VVC using proposed CRS, showing averaged 8.76% and 11.93% Bjøntegaard Delta Rate (BD-Rate) gains against the latest VVC anchor in Random Access (RA) and Low-delay P (LDP) settings respectively. In addition, experimental comparisons to the state-of-the-art super-resolution (SR) based VVC enhancement methods, and ablation studies are conducted to further report superior efficiency and generalization of the proposed algorithm. All materials will be made to public at \url{https://njuvision.github.io/CRS} for reproducible research.    
+        </p>
     </div>
     
     <div class="container" id="exp_results">
         <h2>Additional Experimental Results</h2>
-    <div id="comparison_source">
-        <!-- <div class="row" style="text-align: center;">
-            <img src="web/table1.png" width="900">
-        </div> -->
-        <div class="row" style="text-align: center;">
-            <h3>BD-rate and BD-PSNR of Proposed CRS against HEVC anchor (1-second GOP used in LDP common test).</h3>
-            <img src="src/bdbr_hevc.png">
-        </div>
-        <div class="row" style="text-align: center;">
-            <h3>Averaged BD-rate and BD-PSNR of Proposed CRS against HEVC anchor at various GOP size.</h3>
-            <img src="src/gop_study.png">
-        </div>
-        <div class="row" style="text-align: center;">
-            <h3>Averaged BD-rate of Proposed CRS against VVC anchor with VMAF as the distortion metric.</h3>
-            <img src="src/bd_vmaf_vvc.png">
-        </div>
-        <div class="row" style="text-align: center;">
-            <table border="1" align="center" style="border-collapse: collapse;">
-                <caption>这是表格的标题</caption>
-                <tr>
-                   <th>名称</th>
-                   <th>官网</th>
-                   <th>性质</th>
-                </tr>
-                 <tr>
-                   <td>C语言中文网</td>
-                   <td>http://c.biancheng.net/</td>
-                   <td>教育</td>
-                </tr>
-                <tr>
-                   <td></td>
-                   <td>http://www.baidu.com/</td>
-                   <td>搜索</td>
-                </tr>
-                <tr>
-                    <td>当当</td>
-                   <td>http://www.dangdang.com/</td>
-                    <td>图书</td>
-                </tr>
-              </table>
+        <div id="comparison_source">
+            <div class="row" style="text-align: center;">
+                <h3>BD-rate and BD-PSNR of Proposed CRS against HEVC anchor (1-second GOP used in LDP common test).</h3>
+                <img src="src/bdbr_hevc.png">
+            </div>
+            <div class="row" style="text-align: center;">
+                <h3>Averaged BD-rate and BD-PSNR of Proposed CRS against HEVC anchor at various GOP size.</h3>
+                <img src="src/gop_study.png">
+            </div>
+            <div class="row" style="text-align: center;">
+                <h3>BD-rate of Proposed CRS against AV1 anchor using LDP profile.</h3>
+                <img src="src/bd_av1.png">
+            </div>
+            <div class="row" style="text-align: center;">
+                <h3>Averaged BD-rate of Proposed CRS against VVC anchor with VMAF as the distortion metric.</h3>
+                <img src="src/bd_vmaf_vvc.png">
+            </div>
         </div>
     </div>
 
